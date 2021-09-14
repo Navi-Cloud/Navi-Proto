@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "AuthenticationService/CommunicationMessage.proto";
+
+option csharp_namespace = "NaviAuthenticationShared";
+
+package naviauthentication;
+
+// Service Description
+service Authentication {
+  rpc RegisterUser (RegisterRequest) returns (Result);
+  rpc LoginUser(LoginRequest) returns (Result);
+}
