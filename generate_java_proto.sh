@@ -6,7 +6,7 @@ CURRENT_WORKING_DIRECTORY=$(pwd)
 # Define Directories
 TMP_DIRECTORY="${CURRENT_WORKING_DIRECTORY}/tmp"
 BUILD_DIRECTORY="${CURRENT_WORKING_DIRECTORY}/Build"
-SOURCE_DIRECTORY="${CURRENT_WORKING_DIRECTORY}/Source"
+SOURCE_DIRECTORY="${CURRENT_WORKING_DIRECTORY}/JVMSource"
 OS_HW_VARIANTS=""
 
 # Clean Source Directory First
@@ -25,5 +25,8 @@ chmod a+x $KOTLIN_GRPC_PACKAGE
 
 # Execute
 PROTOC=$(which protoc)
-$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=./Source --grpc_out=./Source AuthenticationService/UserService.proto
-$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=./Source --grpc_out=./Source AuthenticationService/CommunicationMessage.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} --grpc_out=${SOURCE_DIRECTORY} AuthenticationService/UserService.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} --grpc_out=${SOURCE_DIRECTORY} AuthenticationService/CommunicationMessage.proto
+
+# Cleanup
+rm -rf $TMP_DIRECTORY
