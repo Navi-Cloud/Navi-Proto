@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package naviauthentication;
+
 // Message for request[Keep it seperate since we might need to add more fields.]
 message RegisterRequest {
     string userEmail = 1;
