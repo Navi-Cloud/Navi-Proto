@@ -357,10 +357,10 @@ public final class CommunicationMessage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userEmail_);
       }
-      if (!getUserPasswordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPassword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userPassword_);
       }
       unknownFields.writeTo(output);
@@ -372,10 +372,10 @@ public final class CommunicationMessage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userEmail_);
       }
-      if (!getUserPasswordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPassword_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userPassword_);
       }
       size += unknownFields.getSerializedSize();
@@ -1083,10 +1083,10 @@ public final class CommunicationMessage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userEmail_);
       }
-      if (!getUserPasswordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPassword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userPassword_);
       }
       unknownFields.writeTo(output);
@@ -1098,10 +1098,10 @@ public final class CommunicationMessage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userEmail_);
       }
-      if (!getUserPasswordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPassword_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userPassword_);
       }
       size += unknownFields.getSerializedSize();
@@ -1865,10 +1865,10 @@ public final class CommunicationMessage {
       if (resultType_ != naviauthentication.CommunicationMessage.ResultType.UNKNOWN.getNumber()) {
         output.writeEnum(1, resultType_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      if (!getObjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, object_);
       }
       unknownFields.writeTo(output);
@@ -1884,10 +1884,10 @@ public final class CommunicationMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, resultType_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      if (!getObjectBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, object_);
       }
       size += unknownFields.getSerializedSize();
@@ -2465,6 +2465,732 @@ public final class CommunicationMessage {
 
   }
 
+  public interface FindInsideFilesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:naviauthentication.FindInsideFilesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string userEmail = 1;</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string userEmail = 1;</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string targetFolder = 2;</code>
+     * @return The targetFolder.
+     */
+    java.lang.String getTargetFolder();
+    /**
+     * <code>string targetFolder = 2;</code>
+     * @return The bytes for targetFolder.
+     */
+    com.google.protobuf.ByteString
+        getTargetFolderBytes();
+  }
+  /**
+   * <pre>
+   * Messgae for request files in the folder
+   * </pre>
+   *
+   * Protobuf type {@code naviauthentication.FindInsideFilesRequest}
+   */
+  public static final class FindInsideFilesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:naviauthentication.FindInsideFilesRequest)
+      FindInsideFilesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FindInsideFilesRequest.newBuilder() to construct.
+    private FindInsideFilesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FindInsideFilesRequest() {
+      userEmail_ = "";
+      targetFolder_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FindInsideFilesRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FindInsideFilesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetFolder_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return naviauthentication.CommunicationMessage.internal_static_naviauthentication_FindInsideFilesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return naviauthentication.CommunicationMessage.internal_static_naviauthentication_FindInsideFilesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              naviauthentication.CommunicationMessage.FindInsideFilesRequest.class, naviauthentication.CommunicationMessage.FindInsideFilesRequest.Builder.class);
+    }
+
+    public static final int USEREMAIL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string userEmail = 1;</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string userEmail = 1;</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TARGETFOLDER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object targetFolder_;
+    /**
+     * <code>string targetFolder = 2;</code>
+     * @return The targetFolder.
+     */
+    @java.lang.Override
+    public java.lang.String getTargetFolder() {
+      java.lang.Object ref = targetFolder_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetFolder_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string targetFolder = 2;</code>
+     * @return The bytes for targetFolder.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTargetFolderBytes() {
+      java.lang.Object ref = targetFolder_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetFolder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetFolder_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetFolder_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetFolder_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetFolder_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof naviauthentication.CommunicationMessage.FindInsideFilesRequest)) {
+        return super.equals(obj);
+      }
+      naviauthentication.CommunicationMessage.FindInsideFilesRequest other = (naviauthentication.CommunicationMessage.FindInsideFilesRequest) obj;
+
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getTargetFolder()
+          .equals(other.getTargetFolder())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USEREMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + TARGETFOLDER_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetFolder().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(naviauthentication.CommunicationMessage.FindInsideFilesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Messgae for request files in the folder
+     * </pre>
+     *
+     * Protobuf type {@code naviauthentication.FindInsideFilesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:naviauthentication.FindInsideFilesRequest)
+        naviauthentication.CommunicationMessage.FindInsideFilesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return naviauthentication.CommunicationMessage.internal_static_naviauthentication_FindInsideFilesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return naviauthentication.CommunicationMessage.internal_static_naviauthentication_FindInsideFilesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                naviauthentication.CommunicationMessage.FindInsideFilesRequest.class, naviauthentication.CommunicationMessage.FindInsideFilesRequest.Builder.class);
+      }
+
+      // Construct using naviauthentication.CommunicationMessage.FindInsideFilesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userEmail_ = "";
+
+        targetFolder_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return naviauthentication.CommunicationMessage.internal_static_naviauthentication_FindInsideFilesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public naviauthentication.CommunicationMessage.FindInsideFilesRequest getDefaultInstanceForType() {
+        return naviauthentication.CommunicationMessage.FindInsideFilesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public naviauthentication.CommunicationMessage.FindInsideFilesRequest build() {
+        naviauthentication.CommunicationMessage.FindInsideFilesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public naviauthentication.CommunicationMessage.FindInsideFilesRequest buildPartial() {
+        naviauthentication.CommunicationMessage.FindInsideFilesRequest result = new naviauthentication.CommunicationMessage.FindInsideFilesRequest(this);
+        result.userEmail_ = userEmail_;
+        result.targetFolder_ = targetFolder_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof naviauthentication.CommunicationMessage.FindInsideFilesRequest) {
+          return mergeFrom((naviauthentication.CommunicationMessage.FindInsideFilesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(naviauthentication.CommunicationMessage.FindInsideFilesRequest other) {
+        if (other == naviauthentication.CommunicationMessage.FindInsideFilesRequest.getDefaultInstance()) return this;
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getTargetFolder().isEmpty()) {
+          targetFolder_ = other.targetFolder_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        naviauthentication.CommunicationMessage.FindInsideFilesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (naviauthentication.CommunicationMessage.FindInsideFilesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string userEmail = 1;</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string userEmail = 1;</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string userEmail = 1;</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userEmail = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userEmail = 1;</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object targetFolder_ = "";
+      /**
+       * <code>string targetFolder = 2;</code>
+       * @return The targetFolder.
+       */
+      public java.lang.String getTargetFolder() {
+        java.lang.Object ref = targetFolder_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          targetFolder_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string targetFolder = 2;</code>
+       * @return The bytes for targetFolder.
+       */
+      public com.google.protobuf.ByteString
+          getTargetFolderBytes() {
+        java.lang.Object ref = targetFolder_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          targetFolder_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string targetFolder = 2;</code>
+       * @param value The targetFolder to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetFolder(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        targetFolder_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string targetFolder = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetFolder() {
+        
+        targetFolder_ = getDefaultInstance().getTargetFolder();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string targetFolder = 2;</code>
+       * @param value The bytes for targetFolder to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetFolderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        targetFolder_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:naviauthentication.FindInsideFilesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:naviauthentication.FindInsideFilesRequest)
+    private static final naviauthentication.CommunicationMessage.FindInsideFilesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new naviauthentication.CommunicationMessage.FindInsideFilesRequest();
+    }
+
+    public static naviauthentication.CommunicationMessage.FindInsideFilesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FindInsideFilesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FindInsideFilesRequest>() {
+      @java.lang.Override
+      public FindInsideFilesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FindInsideFilesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FindInsideFilesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FindInsideFilesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public naviauthentication.CommunicationMessage.FindInsideFilesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_naviauthentication_RegisterRequest_descriptor;
   private static final 
@@ -2480,6 +3206,11 @@ public final class CommunicationMessage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_naviauthentication_Result_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_naviauthentication_FindInsideFilesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_naviauthentication_FindInsideFilesRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2496,8 +3227,10 @@ public final class CommunicationMessage {
       "\001 \001(\t\022\024\n\014userPassword\030\002 \001(\t\"]\n\006Result\0222\n" +
       "\nresultType\030\001 \001(\0162\036.naviauthentication.R" +
       "esultType\022\017\n\007message\030\002 \001(\t\022\016\n\006object\030\003 \001" +
-      "(\t*D\n\nResultType\022\013\n\007UNKNOWN\020\000\022\013\n\007SUCCESS" +
-      "\020\001\022\r\n\tDUPLICATE\020\002\022\r\n\tFORBIDDEN\020\003b\006proto3"
+      "(\t\"A\n\026FindInsideFilesRequest\022\021\n\tuserEmai" +
+      "l\030\001 \001(\t\022\024\n\014targetFolder\030\002 \001(\t*D\n\nResultT" +
+      "ype\022\013\n\007UNKNOWN\020\000\022\013\n\007SUCCESS\020\001\022\r\n\tDUPLICA" +
+      "TE\020\002\022\r\n\tFORBIDDEN\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2521,6 +3254,12 @@ public final class CommunicationMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_naviauthentication_Result_descriptor,
         new java.lang.String[] { "ResultType", "Message", "Object", });
+    internal_static_naviauthentication_FindInsideFilesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_naviauthentication_FindInsideFilesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_naviauthentication_FindInsideFilesRequest_descriptor,
+        new java.lang.String[] { "UserEmail", "TargetFolder", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
