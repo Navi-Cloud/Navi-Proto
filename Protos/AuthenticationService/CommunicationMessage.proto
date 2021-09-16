@@ -28,3 +28,9 @@ message Result {
     string message = 2;
     string object = 3; // If we need to get some object, serialize it here.
 }
+
+// Messgae for request files in the folder
+message FindInsideFilesRequest {
+    string userEmail = 1;
+    string targetFolder = 2;
+}
