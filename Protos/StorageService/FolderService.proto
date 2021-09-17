@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "StorageService/StorageMessage.proto";
+import "CommonCommunication.proto";
+
+option csharp_namespace = "NaviStorageService";
+
+package navistorage;
+
+// Service Description
+service Folder {
+  rpc CreateRootFolder (CreateRootFolderRequest) returns (Result);
+  rpc FindInsideFiles(FindInsideFilesRequest) returns (Result);
+}

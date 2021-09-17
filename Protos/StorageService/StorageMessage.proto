@@ -1,9 +1,14 @@
 syntax = "proto3";
 
-import "CommonCommunication.proto";
+package navistorage;
 
 // Messgae for request files in the folder
 message FindInsideFilesRequest {
     string userEmail = 1;
     string targetFolder = 2;
+}
+
+// Message For requesting root-folder creation
+message CreateRootFolderRequest {
+    string userEmail = 1; // Only user email is needed, and Result should be used.
 }
