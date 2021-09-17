@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonCommunication.proto";
+
+// Messgae for request files in the folder
+message FindInsideFilesRequest {
+    string userEmail = 1;
+    string targetFolder = 2;
+}

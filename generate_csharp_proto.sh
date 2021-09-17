@@ -42,8 +42,10 @@ PROTOC=$PROTOC_TOOLS_PATH/protoc
 PROTOC_GRPC_CSHARP_PLUGIN=$PROTOC_TOOLS_PATH/grpc_csharp_plugin
 
 # Do execute protoc
-$PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source AuthenticationService/UserService.proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source AuthenticationService/CommunicationMessage.proto
+$PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source AuthenticationService/UserService.proto
+$PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source StorageService/StorageMessage.proto
+$PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source CommonCommunication.proto
 
 # Create CSProject
 cat << EOF > ./Source/SharedService.csproj
@@ -82,7 +84,7 @@ dotnet pack
 NUGET_PACKAGE_LOCATION=$(pwd)/bin/Debug/NaviSharedService.${PUSH_VERSION}.nupkg
 
 # Push it
-dotnet nuget push ${NUGET_PACKAGE_LOCATION} --api-key ${PUSH_API} --source https://api.nuget.org/v3/index.json
+# dotnet nuget push ${NUGET_PACKAGE_LOCATION} --api-key ${PUSH_API} --source https://api.nuget.org/v3/index.json
 
 # Cleanup
 cd ..
