@@ -84,7 +84,7 @@ dotnet pack
 NUGET_PACKAGE_LOCATION=$(pwd)/bin/Debug/NaviSharedService.${PUSH_VERSION}.nupkg
 
 # Push it
-# dotnet nuget push ${NUGET_PACKAGE_LOCATION} --api-key ${PUSH_API} --source https://api.nuget.org/v3/index.json
+dotnet nuget push ${NUGET_PACKAGE_LOCATION} --api-key ${PUSH_API} --source https://api.nuget.org/v3/index.json
 
 # Cleanup
 cd ..
