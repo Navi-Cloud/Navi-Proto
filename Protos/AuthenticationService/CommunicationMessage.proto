@@ -13,3 +13,13 @@ message LoginRequest {
     string userEmail = 1;
     string userPassword = 2;
 }
+
+// Request for Authentication
+message AuthenticationRequest {
+    string userAccessToken = 1; // User String Access token from header.
+}
+
+// Request for Account Removal
+message AccountRemovalRequest {
+    string userEmail = 1;
+}

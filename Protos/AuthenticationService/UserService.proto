@@ -11,4 +11,6 @@ package naviauthentication;
 service Authentication {
   rpc RegisterUser (RegisterRequest) returns (Result);
   rpc LoginUser(LoginRequest) returns (Result);
+  rpc AuthenticateUser(AuthenticationRequest) returns (Result);
+  rpc RemoveUser(AccountRemovalRequest) returns (Result);
 }
