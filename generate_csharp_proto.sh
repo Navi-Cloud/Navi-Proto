@@ -46,6 +46,7 @@ $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source AuthenticationService/UserService.proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source StorageService/StorageMessage.proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source CommonCommunication.proto
+$PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source StorageService/FolderService.proto
 
 # Create CSProject
 cat << EOF > ./Source/SharedService.csproj

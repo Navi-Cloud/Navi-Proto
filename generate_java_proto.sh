@@ -25,8 +25,11 @@ chmod a+x $KOTLIN_GRPC_PACKAGE
 
 # Execute
 PROTOC=$(which protoc)
-$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} --grpc_out=${SOURCE_DIRECTORY} AuthenticationService/UserService.proto
-$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} --grpc_out=${SOURCE_DIRECTORY} AuthenticationService/CommunicationMessage.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} CommonCommunication.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} AuthenticationService/UserService.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} AuthenticationService/CommunicationMessage.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} StorageService/FolderService.proto
+$PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${SOURCE_DIRECTORY} StorageService/StorageMessage.proto
 
 # Cleanup
 rm -rf $TMP_DIRECTORY
