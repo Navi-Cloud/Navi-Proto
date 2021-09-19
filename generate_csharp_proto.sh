@@ -47,6 +47,12 @@ $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source StorageService/StorageMessage.proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source CommonCommunication.proto
 $PROTOC --plugin=protoc-gen-grpc=$PROTOC_GRPC_CSHARP_PLUGIN --proto_path=./Protos --proto_path=$TMP_DIRECTORY/build/native/include --csharp_out=./Source --grpc_out=./Source StorageService/FolderService.proto
+PROTOC_RESULT=$?
+# If Protoc failed, Log it
+if [ $PROTOC_RESULT -ne 0 ]; then
+    echo "Seems like protoc failed, with code number ${PROTOC_RESULT}."
+    exit 1
+fi
 
 # Create CSProject
 cat << EOF > ./Source/SharedService.csproj

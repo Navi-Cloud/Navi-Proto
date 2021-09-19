@@ -9,10 +9,13 @@ on:
     branches:
       - master
 
+env:
+  release_version: 1.0.5
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  java_deployment:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -45,7 +48,7 @@ jobs:
           echo "signing.secretKeyRingFile=/home/runner/.binarykey.gpg" >> ~/.gradle/gradle.properties 
           echo "ossusername=${{ secrets.OSS_USERNAME }}" >> ~/.gradle/gradle.properties 
           echo "ossuserpassword=${{ secrets.GPG_PASSPHRASE }}" >> ~/.gradle/gradle.properties 
-          echo "sharedversion=1.0.3" >> ~/.gradle/gradle.properties 
+          echo "sharedversion=${{ env.release_version }}" >> ~/.gradle/gradle.properties 
       
       # Install Protoc
       - name: Install Lates Protoc
@@ -57,7 +60,7 @@ jobs:
       - name: Execute Java Release Script
         run: |
           chmod a+x ./generate_java_proto.sh
-          ./generate_java_proto.sh  
+          ./generate_java_proto.sh
 
       # Cleanup
       - name: Remove All GPG Related thingy
@@ -66,3 +69,30 @@ jobs:
           gpg --batch --yes --delete-keys ${{ secrets.GPG_FULL_FINGERPRINTS }}
           rm -rf ~/.binarykey.gpg
           rm -rf ~/.testkey.gpg
+  # This workflow contains a single job called "C# Deployment"
+  csharp_deployment:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Setup .NET Core 5.0.x
+      - name: Setup .NET Core SDK '5.0.x'
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.x'
+
+      # Install Protoc
+      - name: Install Lates Protoc
+        run: |
+          sudo apt update
+          sudo apt install -y protobuf-compiler
+      
+      # Do work script
+      - name: Execute CSharp Release Script
+        run: |
+          chmod a+x ./generate_csharp_proto.sh
+          ./generate_csharp_proto.sh ${{ env.release_version }} ${{ secrets.NUGET_API_KEY }}
