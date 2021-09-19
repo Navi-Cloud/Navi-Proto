@@ -44,7 +44,7 @@ jobs:
           echo "signing.secretKeyRingFile=/home/runner/.binarykey.gpg" >> ~/.gradle/gradle.properties 
           echo "ossusername=${{ secrets.OSS_USERNAME }}" >> ~/.gradle/gradle.properties 
           echo "ossuserpassword=${{ secrets.GPG_PASSPHRASE }}" >> ~/.gradle/gradle.properties 
-          echo "sharedversion=1.0.2" >> ~/.gradle/gradle.properties 
+          echo "sharedversion=1.0.3" >> ~/.gradle/gradle.properties 
       
       # Install Protoc
       - name: Install Lates Protoc

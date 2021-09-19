@@ -60,7 +60,7 @@ if [ $buildResult -ne 0 ]; then
     exit $buildResult
 fi
 
-./gradlew closeRepository
+./gradlew closeAndReleaseRepository
 cd ${CURRENT_WORKING_DIRECTORY}
 
 # Cleanup
