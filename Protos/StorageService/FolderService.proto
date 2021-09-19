@@ -3,9 +3,7 @@ syntax = "proto3";
 import "StorageService/StorageMessage.proto";
 import "CommonCommunication.proto";
 
-option csharp_namespace = "NaviStorageService";
-
-package navistorage;
+package io.github.navi_cloud.shared.storage;
 
 // Service Description
 service Folder {

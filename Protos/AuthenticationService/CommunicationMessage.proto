@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package naviauthentication;
+package io.github.navi_cloud.shared.authentication;
 
 // Message for request[Keep it seperate since we might need to add more fields.]
 message RegisterRequest {

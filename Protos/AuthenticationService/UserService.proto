@@ -3,9 +3,7 @@ syntax = "proto3";
 import "AuthenticationService/CommunicationMessage.proto";
 import "CommonCommunication.proto";
 
-option csharp_namespace = "NaviAuthenticationShared";
-
-package naviauthentication;
+package io.github.navi_cloud.shared.authentication;
 
 // Service Description
 service Authentication {

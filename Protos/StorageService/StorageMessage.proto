@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package navistorage;
+package io.github.navi_cloud.shared.storage;
 
 // Messgae for request files in the folder
 message FindInsideFilesRequest {
