@@ -27,6 +27,7 @@ chmod a+x $KOTLIN_GRPC_PACKAGE
 # Setup Gradle Jar Repository
 cd ${SOURCE_DIRECTORY}
 unzip $CURRENT_WORKING_DIRECTORY/gradle_template.zip
+rm -rf lib/src/main/java/io
 cd ${CURRENT_WORKING_DIRECTORY}
 
 # Execute
@@ -36,9 +37,15 @@ $PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --ja
 $PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${JVM_OUT_DIRECTORY} --grpc_out=${JVM_OUT_DIRECTORY} AuthenticationService/CommunicationMessage.proto
 $PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${JVM_OUT_DIRECTORY} --grpc_out=${JVM_OUT_DIRECTORY} StorageService/FolderService.proto
 $PROTOC --plugin=protoc-gen-grpc=$KOTLIN_GRPC_PACKAGE --proto_path=./Protos --java_out=${JVM_OUT_DIRECTORY} --grpc_out=${JVM_OUT_DIRECTORY} StorageService/StorageMessage.proto
+PROTOC_RESULT=$?
+# If Protoc failed, Log it
+if [ $PROTOC_RESULT -ne 0 ]; then
+    echo "Seems like protoc failed, with code number ${PROTOC_RESULT}."
+fi
 
 # Build Library
 cd ${SOURCE_DIRECTORY}
+
 # Publish to Repository
 ./gradlew clean build publish
 buildResult=$?
