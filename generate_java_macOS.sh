@@ -21,7 +21,7 @@ fi
 
 # Download GRPC-Kotlin
 KOTLIN_GRPC_PACKAGE="${TMP_DIRECTORY}/protoc_plugin"
-curl -L https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.40.1/protoc-gen-grpc-java-1.40.1-linux-x86_64.exe > $KOTLIN_GRPC_PACKAGE
+curl -L https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.40.1/protoc-gen-grpc-java-1.40.1-osx-x86_64.exe > $KOTLIN_GRPC_PACKAGE
 chmod a+x $KOTLIN_GRPC_PACKAGE
 
 # Setup Gradle Jar Repository

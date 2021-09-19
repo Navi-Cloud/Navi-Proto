@@ -46,6 +46,12 @@ jobs:
           echo "ossuserpassword=${{ secrets.GPG_PASSPHRASE }}" >> ~/.gradle/gradle.properties 
           echo "sharedversion=1.0.2" >> ~/.gradle/gradle.properties 
       
+      # Install Protoc
+      - name: Install Lates Protoc
+        run: |
+          sudo apt update
+          sudo apt install -y protobuf-compiler
+      
       # Do work script
       - name: Execute Java Release Script
         run: |
