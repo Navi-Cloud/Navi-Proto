@@ -9,4 +9,6 @@ package io.github.navi_cloud.shared.storage;
 service Folder {
   rpc CreateRootFolder (CreateRootFolderRequest) returns (Result);
   rpc FindInsideFiles(FindInsideFilesRequest) returns (Result);
+  rpc CreateNewFolder (CreateNewFolderRequest) returns (Result);
+  rpc DeleteFolder (DeleteFolderRequest) returns (Result);
 }
