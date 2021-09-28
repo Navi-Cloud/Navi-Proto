@@ -12,3 +12,16 @@ message FindInsideFilesRequest {
 message CreateRootFolderRequest {
     string userEmail = 1; // Only user email is needed, and Result should be used.
 }
+
+// Message for requesting to create a new folder
+message CreateNewFolderRequest {
+    string userEmail = 1;
+    string parentFolderName = 2;
+    string newFolderName = 3;
+}
+
+// Message for requesting deletion of folder
+message DeleteFolderRequest {
+    string userEmail = 1;
+    string targetFolder = 2;
+}
